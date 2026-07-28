@@ -16,9 +16,17 @@
 - [ ] SM2椭圆曲线算法（待开发）
 
 ## 使用
+### SM3 哈希计算
 ```
+python
+# 从 sm3 包导入 SM3 类
 from sm3 import SM3
+
+# 实例化并运行
 sm3 = SM3()
 hash_result = sm3.hash(b"abc")
-print(hash_result.hex()) # 66c7f0f462eeedd9d1f2d46bdc10e4e24167c4875cf2f7a2297da02b8f4ba8e0
+print(hash_result.hex())
 ```
+
+## 开发进度
+本项目由山东师范大学网络空间安全专业在校生独立开发，旨在深入理解国密算法底层原理。
