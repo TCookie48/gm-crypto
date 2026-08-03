@@ -7,12 +7,7 @@
 
 ## 对标标准
 - SM3: GM/T 0004-2012 / GB/T 32905-2016
-- SM4: GM/T 0002-2012 / GB/T 32907-2016
-- SM2: GM/T 0003-2012 / GB/T 32918-2016
-
-## 功能
-- [x] SM3哈希算法（通过GM/T 0004-2012官方测试向量验证）
-- [ ] SM4分组密码（开发中）
+- [ ] SM4分组密码（通过 GM/T 0002-2012 官方测试向量验证）
 - [ ] SM2椭圆曲线算法（待开发）
 
 ## 使用
@@ -27,6 +22,18 @@ sm3 = SM3()
 hash_result = sm3.hash(b"abc")
 print(hash_result.hex())
 ```
+
+### SM4 ECB 模式加密
+```
+python
+from sm4 import SM4
+key = bytes.fromhex("0123456789ABCDEFFEDCBA9876543210")
+plaintext = bytes.fromhex("0123456789ABCDEFFEDCBA9876543210")
+sm4 = SM4(key)
+ciphertext = sm4.encrypt_block(plaintext)
+print(ciphertext.hex().upper()) # 681EDF34D206965E86B3E94F536E4246
+```
+
 
 ## 开发进度
 本项目由山东师范大学网络空间安全专业在校生独立开发，旨在深入理解国密算法底层原理。
